@@ -1,22 +1,12 @@
 import express, { response } from "express";
 import { request } from "node:http";
+import "./database";
+import { routes } from "./routes";
 
 const app = express();
 
-/**
- * GET => Search`s
- * POST => Create
- * PUT => Modifications
- * DELETE => Deletes
- * PATCH => Modify specific info
- */
+app.use(express.json());
 
-app.get("/", (request, response) => {
-  return response.json({ message: "Hi, NLW 05"});
-});
-
-app.post("/", (request, response) => {
-  return response.json({ message: "User salved with success!"});
-})
+app.use(routes);
 
 app.listen(3333, () => console.log("Server is running in port 3333"));

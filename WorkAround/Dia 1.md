@@ -2,7 +2,9 @@ Typescript, uma versao melhorada do javascript, trata cada coisa com seu tipo, d
 
 Uso do framework Express
 
-Requests
+- Auxilia na criacao das rotas
+
+Requests (Uso do Insomnia para fazer as Request`s, pois o browser apenas usa GET)
 
 - GET => Search`s
 - POST => Create
