@@ -1,21 +1,19 @@
 import { Router } from "express";
+import { MessagesController } from "./controllers/MessagesController";
 import { SettingsController } from "./controllers/SettingsController";
-import "./database";
-
-/**
- * Tipos de parametros
- * Routes Params => Parametros de Rotas
- * localhost:3333/settings/1
- * Query Params => Filtors e Buscas
- * localhost:3333/settings/1?search=algumacoisa
- *  Body Params => 
- */
+import { UsersController } from "./controllers/UsersController";
 
 
 const routes = Router();
 
 const settingsController = new SettingsController();
+const usersController = new UsersController();
+const messagesController = new MessagesController();
+
 
 routes.post("/settings", settingsController.create);
+routes.post("/users", usersController.create);
+routes.post("/messages", messagesController.create);
+routes.get("/messages/:id", messagesController.showByUser);
 
 export { routes };

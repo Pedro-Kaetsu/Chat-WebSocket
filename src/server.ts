@@ -1,6 +1,5 @@
 import express, { response } from "express";
 import { request } from "node:http";
-import "./database";
 import { routes } from "./routes";
 
 const app = express();
